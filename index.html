@@ -1,51 +1,94 @@
 <!DOCTYPE html>
-<html>
-  <body>
-    <title>sites.google.com</title>
-    <h1 class="u">Ocean Pollution Graph</h1>
-    <h1 class="b">-</h1>
-    <h1 class="p">Surface of the water - Lots of plastic, and non-biodegradable paper, and other materials</h1>
-  	<h1 class="b">-</h1>
-    <h1 class="p">1km under water - Some microplastics, and some unbiodegradable plastics, and fabrics</h1>
-    <h1 class="b">-</h1>
-    <h1 class="p">2km under water - Very little microplastics, and some litter</h1>
-    <h1 class="b">-</h1>
-    <h1 class="p">3km under water - Some of the oceans stop here, and have some dead animals on the ocean floor bottom</h1>
-    <h1 class="b">-</h1>
-    <h1 class="p">4km under water - Lots of big fish, and rarely some plastics</h1>
-    <h1 class="b">-</h1>
-    <h1 class="p">5km under water - Marine Debris, Chemical Pollutants, and Oil Spills</h1>
-    <h1 class="b">-</h1>
-    <h1 class="p">6km under water - Microplastics, some Persistent Organic Pollutants, also a bit of Contaminated Sediments</h1>
-    <h1 class="b">-</h1>
-    <h1 class="p">7km under water - Bits of Natural Contaminants, oil spills, and Microplastics</h1>
-    <h1 class="b">-</h1>
-    <h1 class="b">-</h1>
-    <h1 class="p">Made by Alex.v - Data from Google.</h1>
-    <a href="https://payhip.com/b/BK7zJ" class="payhip-add-to-cart-button" data-theme="blue" data-product="BK7zJ">Buy at amazing Price!</a>
-    
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School Schedule</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    #passwordBox, #scheduleDisplay {
+      text-align: center;
+    }
+
+    #passwordBox input {
+      padding: 10px;
+      margin-right: 10px;
+    }
+
+    #passwordBox button {
+      padding: 10px 20px;
+    }
+
+    #scheduleDisplay button {
+      margin-top: 10px;
+      padding: 10px 20px;
+    }
+
+    #scheduleInfo {
+      text-align: left;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="passwordBox">
+  <input type="password" id="passwordInput" placeholder="Enter password">
+  <button onclick="checkPassword()">Submit</button>
+</div>
+
+<div id="scheduleDisplay" style="display:none;">
+  <h2>Group 1 Schedule</h2>
+  <p id="scheduleInfo"></p>
+  <div>
+    <button onclick="showSchedule('week1')">Week 1</button>
+    <button onclick="showSchedule('week2')">Week 2</button>
+  </div>
+</div>
+
+<script>
+  const group1Password = '7BJA24';
+  const group2Password = '7ACK24';
+  let currentUserGroup = '';
+
+  function checkPassword() {
+    const enteredPassword = document.getElementById('passwordInput').value;
+    if (enteredPassword === group1Password) {
+      currentUserGroup = 'group1';
+      document.getElementById('passwordBox').style.display = 'none';
+      document.getElementById('scheduleDisplay').style.display = 'block';
+    } else if (enteredPassword === group2Password) {
+      currentUserGroup = 'group2';
+      document.getElementById('passwordBox').innerHTML = '<h2>Coming Soon</h2>';
+    } else {
+      alert('Incorrect password');
+    }
+  }
+
+  function showSchedule(week) {
+    const scheduleInfo = document.getElementById('scheduleInfo');
+    if (currentUserGroup === 'group1') {
+      if (week === 'week1') {
+        scheduleInfo.textContent = "Monday: 8:15-8:40=Form Room, 8:40-9:40=Art, 9:40-10:35=Science, 10:35-10:55=Break, 10:55-11:55=PE, 11:55-12:55=Math, 12:55-13:30=Lunch, 13:30-14:30=English, 14:30-15:30=Geography";
+      } else if (week === 'week2') {
+        scheduleInfo.textContent = "Monday: 8:15-8:40=Registration, 8:40-9:40=Drama, 9:40-10:35=DICE, 10:35-10:55=Break, 10:55-11:55=DICE, 11:55-12:55=Languages, 12:55-13:30=Lunch, 13:30-14:30=Arabic, 14:30-15:30=Study/Islamic";
+      } else {
+        scheduleInfo.textContent = "Unavailable data";
+      }
+    } else if (currentUserGroup === 'group2') {
+      scheduleInfo.textContent = "Unavailable data";
+    }
+  }
+</script>
+
+</body>
 </html>
-<style>
-  .u {
-    color: white;
-    text-align: center;
-    font-family: Verdana, Geneva, sans-serif;
-  }
-  .b {
-    color: white;
-    text-align: center;
-    opacity: 0;
-  }
-  .p {
-  color: white;
-  font-family: Verdana, Geneva, sans-serif;
-  }
- 
-  body {
-  background: linear-gradient(180deg, #9dd3fa, #000000);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  
-  }
-</style>
