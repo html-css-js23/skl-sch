@@ -182,29 +182,30 @@
           if (currentHour === 8 && currentMinute >= 15) {
             schedule += "Form Room";
             nextPeriod = "Music";
-          } else if (currentHour === 8 || (currentHour === 9 && currentMinute < 40)) {        schedule += "Music";
-        nextPeriod = "Languages";
-      } else if (currentHour === 9 && currentMinute >= 40) {
-        schedule += "Languages";
-        nextPeriod = "Break";
-      } else if (currentHour === 10 && currentMinute < 35) {
-        schedule += "Break";
-        nextPeriod = "PE";
-      } else if (currentHour === 10 && currentMinute >= 35 && currentMinute < 55) {
-        schedule += "PE";
-        nextPeriod = "English";
-      } else if (currentHour === 10 || (currentHour === 11 && currentMinute < 55)) {
-        schedule += "English";
-        nextPeriod = "Lunch";
-      } else if (currentHour === 12) {
-        schedule += "Lunch";
-        nextPeriod = "Social Studies";
-      } else if (currentHour === 13) {
-        schedule += "Social Studies";
-        nextPeriod = "Science";
-      } else if (currentHour === 14) {
-        schedule += "Science";
-        nextPeriod = "End of Day";
+          } else if (currentHour === 8 || (currentHour === 9 && currentMinute < 40)) {
+          schedule += "Music";
+        	nextPeriod = "Languages";
+      	} else if (currentHour === 9 && currentMinute >= 40) {
+        	schedule += "Languages";
+        	nextPeriod = "Break";
+      	} else if (currentHour === 10 && currentMinute < 35) {
+        	schedule += "Break";
+        	nextPeriod = "PE";
+      	} else if (currentHour === 10 && currentMinute >= 35 && currentMinute < 55) {
+        	schedule += "PE";
+        	nextPeriod = "English";
+      	} else if (currentHour === 10 || (currentHour === 11 && currentMinute < 55)) {
+        	schedule += "English";
+        	nextPeriod = "Lunch";
+      	} else if (currentHour === 12) {
+        	schedule += "Lunch";
+        	nextPeriod = "Social Studies";
+      	} else if (currentHour === 13) {
+        	schedule += "Social Studies";
+        	nextPeriod = "Science";
+      	} else if (currentHour === 14) {
+        	schedule += "Science";
+        	nextPeriod = "End of Day";
       }
     } else if (currentDay === 4) { // Thursday
       // Add Thursday schedule logic here
@@ -218,6 +219,6 @@
 } else if (currentUserGroup === '7A') {
   scheduleInfo.textContent = "Unavailable data";
 }
-}
+</script>
 </body>
 </html>
