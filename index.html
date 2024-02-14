@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>School Schedule - BETA1.04</title>
+  <title>School Schedule - BETA1.05</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -114,8 +114,8 @@
     const scheduleInfo = document.getElementById('scheduleInfo');
     if (currentUserGroup === '7B') {
       const currentDate = new Date();
-      const currentDay = currentDate.getUTCDay();
-      const currentHour = currentDate.getUTCHours();
+      const currentDay = (currentDate.getDay() + 6) % 7; // Adjust for Sunday being 0 in JavaScript
+      const currentHour = currentDate.getUTCHours() + 4; // Adjust for GMT+4
       const currentMinute = currentDate.getUTCMinutes();
       let schedule = '';
       let nextPeriod = '';
