@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>School Schedule - BETA1.07BUGFIX8</title>
+  <title>School Schedule - BETA1.07BUGFIX9</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -120,7 +120,7 @@
       let schedule = '';
       let nextPeriod = '';
       if (week === 'week1' && currentDay >= 1) {
-        if (currentDay === 1) { // Monday
+        if (currentDay === 2) { // Monday
           if (currentHour === 8 && currentMinute >= 15) {
             schedule += "Form Room";
             nextPeriod = "Art";
@@ -149,7 +149,7 @@
             schedule += "Geography";
             nextPeriod = "End of Day";
           }
-        } else if (currentDay === 2) { // Tuesday
+        } else if (currentDay === 3) { // Tuesday
           if (currentHour === 8 && currentMinute >= 15) {
             schedule += "Form Room";
             nextPeriod = "Drama";
@@ -178,7 +178,7 @@
             schedule += "Study/Islamic";
             nextPeriod = "End of Day";
           }
-        } else if (currentDay === 3) { // Wednesday
+        } else if (currentDay === 4) { // Wednesday
           if (currentHour === 8 && currentMinute >= 15) {
             schedule += "Form Room";
             nextPeriod = "Music";
@@ -207,9 +207,9 @@
         	schedule += "Science";
         	nextPeriod = "End of Day";
       }
-    } else if (currentDay === 4) { // Thursday
+    } else if (currentDay === 5) { // Thursday
       // Add Thursday schedule logic here
-    } else if (currentDay === 5) { // Friday
+    } else if (currentDay === 6) { // Friday
       // Add Friday schedule logic here
     }
     scheduleInfo.innerHTML = `<p>Current Period: ${schedule}</p><p>Next Period: ${nextPeriod}</p>`;
