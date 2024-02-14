@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>School Schedule - BETA1.00</title>
+  <title>School Schedule - BETA1.01</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -113,12 +113,37 @@
   function showSchedule(week) {
     const scheduleInfo = document.getElementById('scheduleInfo');
     if (currentUserGroup === '7B') {
-      if (week === 'week1') {
-        scheduleInfo.innerHTML = "<p>Monday: 8:15-8:40=Form Room, 8:40-9:40=Art, 9:40-10:35=Science, 10:35-10:55=Break, 10:55-11:55=PE, 11:55-12:55=Math, 12:55-13:30=Lunch, 13:30-14:30=English, 14:30-15:30=Geography</p>";
-        scheduleInfo.innerHTML += "<p>Tuesday: 8:15-8:40=Registration, 8:40-9:40=Drama, 9:40-10:35=DICE, 10:35-10:55=Break, 10:55-11:55=DICE, 11:55-12:55=Languages, 12:55-13:30=Lunch, 13:30-14:30=Arabic, 14:30-15:30=Study/Islamic</p>";
-        scheduleInfo.innerHTML += "<p>Wednesday: 8:15-8:40=Registration, 8:40-9:40=Music, 9:40-10:35=Languages, 10:35-10:55=Break, 10:55-11:55=PE, 11:55-12:55=English, 12:55-13:30=Lunch, 13:30-14:30=Social Studies, 14:30-15:30=Science</p>";
-        scheduleInfo.innerHTML += "<p>Thursday: Unavailable data</p>";
-        scheduleInfo.innerHTML += "<p>Friday: Unavailable data</p>";
+      const currentDate = new Date();
+      const currentDay = currentDate.getUTCDay();
+      const currentHour = currentDate.getUTCHours();
+      const currentMinute = currentDate.getUTCMinutes();
+      let currentPeriod = '';
+      let nextPeriod = '';
+      if (week === 'week1' && currentDay >= 1 && currentDay <= 5) {
+        if ((currentDay === 1 && currentHour === 8 && currentMinute >= 15) ||
+            (currentDay === 2 && currentHour === 8) ||
+            (currentDay === 3 && currentHour === 8) ||
+            (currentDay === 4 && currentHour === 8) ||
+            (currentDay === 5 && currentHour === 8)) {
+          currentPeriod = "Registration";
+          nextPeriod = "Art";
+        } else if ((currentDay === 1 && currentHour === 8 && currentMinute >= 40) ||
+                   (currentDay === 2 && currentHour === 9) ||
+                   (currentDay === 3 && currentHour === 9) ||
+                   (currentDay === 4 && currentHour === 9) ||
+                   (currentDay === 5 && currentHour === 9)) {
+          currentPeriod = "Art";
+          nextPeriod = "Science";
+        } else if ((currentDay === 1 && currentHour === 9 && currentMinute >= 40) ||
+                   (currentDay === 2 && currentHour === 9 && currentMinute < 40) ||
+                   (currentDay === 3 && currentHour === 9 && currentMinute < 35) ||
+                   (currentDay === 4 && currentHour === 9 && currentMinute < 35) ||
+                   (currentDay === 5 && currentHour === 9 && currentMinute < 35)) {
+          currentPeriod = "Science";
+          nextPeriod = "Break";
+        }
+        // Add more conditions for other periods
+        scheduleInfo.innerHTML = `<p>Current Period: ${currentPeriod}</p><p>Next Period: ${nextPeriod}</p>`;
       } else {
         scheduleInfo.innerHTML = "<p>Unavailable data</p>";
       }
