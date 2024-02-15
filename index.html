@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>School Schedule - TESTING1 (7A COMING SOON)</title>
+  <title>School Schedule - TESTING7A-1</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -104,7 +104,8 @@
       document.getElementById('scheduleDisplay').style.display = 'block';
     } else if (enteredPassword === group2Password) {
       currentUserGroup = '7A';
-      document.getElementById('passwordBox').innerHTML = '<h2 id="comingSoon">Coming Soon</h2>';
+      document.getElementById('passwordBox').style.display = 'none';
+      document.getElementById('scheduleDisplay').style.display = 'block';
     } else {
       alert('Incorrect password');
     }
@@ -261,7 +262,153 @@
     scheduleInfo.innerHTML = "<p>Unavailable data</p>";
   }
 } else if (currentUserGroup === '7A') {
-  scheduleInfo.textContent = "Unavailable data";
+  const currentDate = new Date();
+      const currentDay = (currentDate.getUTCDay() + 4) % 7; // Adjust for GMT+4
+      const currentHour = currentDate.getHours();
+      const currentMinute = currentDate.getMinutes();
+      let schedule = '';
+      let nextPeriod = '';
+      if (week === 'week1' && currentDay >= 1) {
+        if (currentDay === 5) { // Monday
+          if (currentHour === 8 && currentMinute < 40) {
+            schedule += "Form Room";
+            nextPeriod = "Art";
+          } else if (currentHour === 8 || currentHour === 9 && currentMinute < 40) {
+          schedule += "Art";
+        	nextPeriod = "Science";
+      	} else if (currentHour === 9 || currentHour === 10 && currentMinute < 35) {
+        	schedule += "Science";
+        	nextPeriod = "Break";
+      	} else if (currentHour === 10 && currentMinute < 55) {
+        	schedule += "Break";
+        	nextPeriod = "PE";
+      	} else if (currentHour === 10 || currentHour === 11 && currentMinute < 55) {
+        	schedule += "PE";
+        	nextPeriod = "Math";
+      	} else if (currentHour === 11 || currentHour === 12 && currentMinute < 55) {
+        	schedule += "Math";
+        	nextPeriod = "Lunch";
+      	} else if (currentHour === 12 || currentHour === 13 && currentMinute < 30) {
+        	schedule += "Lunch";
+        	nextPeriod = "English";
+      	} else if (currentHour === 13 || currentHour === 14 && currentMinute < 30) {
+        	schedule += "English";
+        	nextPeriod = "Geography";
+      	} else if (currentHour === 14 || currentHour === 15 && currentMinute < 30) {
+        	schedule += "Geography";
+        	nextPeriod = "End of Day";
+      }
+        } else if (currentDay === 6) { // Tuesday
+          if (currentHour === 8 && currentMinute < 40) {
+            schedule += "Form Room";
+            nextPeriod = "Drama";
+          } else if (currentHour === 8 || currentHour === 9 && currentMinute < 40) {
+          schedule += "Drama";
+        	nextPeriod = "DICE";
+      	} else if (currentHour === 9 || currentHour === 10 && currentMinute < 35) {
+        	schedule += "DICE";
+        	nextPeriod = "Break";
+      	} else if (currentHour === 10 && currentMinute < 55) {
+        	schedule += "Break";
+        	nextPeriod = "DICE";
+      	} else if (currentHour === 10 || currentHour === 11 && currentMinute < 55) {
+        	schedule += "DICE";
+        	nextPeriod = "Languages";
+      	} else if (currentHour === 11 || currentHour === 12 && currentMinute < 55) {
+        	schedule += "Languages";
+        	nextPeriod = "Lunch";
+      	} else if (currentHour === 12 || currentHour === 13 && currentMinute < 30) {
+        	schedule += "Lunch";
+        	nextPeriod = "Arabic";
+      	} else if (currentHour === 13 || currentHour === 14 && currentMinute < 30) {
+        	schedule += "Arabic";
+        	nextPeriod = "Study/Islamic";
+      	} else if (currentHour === 14 || currentHour === 15 && currentMinute < 30) {
+        	schedule += "Study/Islamic";
+        	nextPeriod = "End of Day";
+      }
+        } else if (currentDay === 7) { // Wednesday
+          if (currentHour === 8 && currentMinute < 40) {
+            schedule += "Form Room";
+            nextPeriod = "Music";
+          } else if (currentHour === 8 || currentHour === 9 && currentMinute < 40) {
+          schedule += "Music";
+        	nextPeriod = "Languages";
+      	} else if (currentHour === 9 || currentHour === 10 && currentMinute < 35) {
+        	schedule += "Languages";
+        	nextPeriod = "Break";
+      	} else if (currentHour === 10 && currentMinute < 55) {
+        	schedule += "Break";
+        	nextPeriod = "PE";
+      	} else if (currentHour === 10 || currentHour === 11 && currentMinute < 55) {
+        	schedule += "PE";
+        	nextPeriod = "English";
+      	} else if (currentHour === 11 || currentHour === 12 && currentMinute < 55) {
+        	schedule += "English";
+        	nextPeriod = "Lunch";
+      	} else if (currentHour === 12 || currentHour === 13 && currentMinute < 30) {
+        	schedule += "Lunch";
+        	nextPeriod = "Social Studies";
+      	} else if (currentHour === 13 || currentHour === 14 && currentMinute < 30) {
+        	schedule += "Social Studies";
+        	nextPeriod = "Science";
+      	} else if (currentHour === 14 || currentHour === 15 && currentMinute < 30) {
+        	schedule += "Science";
+        	nextPeriod = "End of Day";
+      }
+    } else if (currentDay === 1) { // Thursday
+      // Add Thursday schedule logic here
+          if (currentHour === 8 && currentMinute < 40) {
+            schedule += "Form Room";
+            nextPeriod = "Arabic";
+          } else if (currentHour === 8 || currentHour === 9 && currentMinute < 40) {
+          schedule += "Arabic";
+        	nextPeriod = "Math";
+      	} else if (currentHour === 9 || currentHour === 10 && currentMinute < 35) {
+        	schedule += "Math";
+        	nextPeriod = "Break";
+      	} else if (currentHour === 10 && currentMinute < 55) {
+        	schedule += "Break";
+        	nextPeriod = "Science";
+      	} else if (currentHour === 10 || currentHour === 11 && currentMinute < 55) {
+        	schedule += "Science";
+        	nextPeriod = "English";
+      	} else if (currentHour === 11 || currentHour === 12 && currentMinute < 55) {
+        	schedule += "English";
+        	nextPeriod = "Lunch";
+      	} else if (currentHour === 12 || currentHour === 13 && currentMinute < 30) {
+        	schedule += "Lunch";
+        	nextPeriod = "Geography";
+      	} else if (currentHour === 13 || currentHour === 14 && currentMinute < 30) {
+        	schedule += "Geography";
+        	nextPeriod = "History";
+      	} else if (currentHour === 14 || currentHour === 15 && currentMinute < 30) {
+        	schedule += "History";
+        	nextPeriod = "End of Day";
+      }
+    } else if (currentDay === 2) { // Friday
+      // Add Friday schedule logic here
+          if (currentHour === 8 && currentMinute < 40) {
+            schedule += "Form Room";
+            nextPeriod = "Math";
+          } else if (currentHour === 8 || currentHour === 9 && currentMinute < 40) {
+          schedule += "Math";
+        	nextPeriod = "Arabic";
+      	} else if (currentHour === 9 || currentHour === 10 && currentMinute < 35) {
+        	schedule += "Arabic";
+        	nextPeriod = "Break";
+      	} else if (currentHour === 10 && currentMinute < 55) {
+        	schedule += "Break";
+        	nextPeriod = "History";
+      	} else if (currentHour === 10 || currentHour === 11 && currentMinute < 55) {
+        	schedule += "History";
+        	nextPeriod = "End of Day";
+      	}
+    }
+  scheduleInfo.innerHTML = `<p>Current Period: ${schedule}</p><p>Next Period: ${nextPeriod}</p>`;
+  } else {
+    scheduleInfo.innerHTML = "<p>Unavailable data</p>";
+  }
 }
 }
 </script>
