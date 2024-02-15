@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>School Schedule - BUGFIX1 (7A COMING SOON)</title>
+  <title>School Schedule - BUGFIX2 (7A COMING SOON)</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -212,28 +212,28 @@
           if (currentHour === 8 && currentMinute >= 15) {
             schedule += "Form Room";
             nextPeriod = "Arabic";
-          } else if (currentHour === 8 || (currentHour === 9 && currentMinute < 40)) {
+          } else if (currentHour === 8 && currentMinute >= 40) {
           schedule += "Arabic";
         	nextPeriod = "Math";
       	} else if (currentHour === 9 && currentMinute >= 40) {
         	schedule += "Math";
         	nextPeriod = "Break";
-      	} else if (currentHour === 10 && currentMinute < 35) {
+      	} else if (currentHour === 10 && currentMinute >= 35) {
         	schedule += "Break";
         	nextPeriod = "Science";
-      	} else if (currentHour === 10 && currentMinute < 55) {
+      	} else if (currentHour === 10 && currentMinute >= 55) {
         	schedule += "Science";
         	nextPeriod = "English";
-      	} else if (currentHour === 10 || (currentHour === 11 && currentMinute < 55)) {
+      	} else if (currentHour === 11 && currentMinute >= 55) {
         	schedule += "English";
         	nextPeriod = "Lunch";
-      	} else if (currentHour === 12) {
+      	} else if (currentHour === 12 && currentMinute >= 55) {
         	schedule += "Lunch";
         	nextPeriod = "Geography";
-      	} else if (currentHour === 13) {
+      	} else if (currentHour === 13 && currentMinute >= 30) {
         	schedule += "Geography";
         	nextPeriod = "History";
-      	} else if (currentHour === 14) {
+      	} else if (currentHour === 14 && currentMinute >= 30) {
         	schedule += "History";
         	nextPeriod = "End of Day";
       }
