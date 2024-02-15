@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>School Schedule - TESTING7A-1</title>
+  <title>School Schedule - TESTING7A-2</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -89,6 +89,14 @@
       <button disabled>Week 2 (Coming Soon)</button>
     </div>
   </div>
+  <div id="scheduleDisplayA" style="display:none;">
+    <h2>7A Schedule</h2>
+    <p id="scheduleInfo"></p>
+    <div>
+      <button onclick="showSchedule('week1')">Week 1</button>
+      <button disabled>Week 2 (Coming Soon)</button>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -105,7 +113,7 @@
     } else if (enteredPassword === group2Password) {
       currentUserGroup = '7A';
       document.getElementById('passwordBox').style.display = 'none';
-      document.getElementById('scheduleDisplay').style.display = 'block';
+      document.getElementById('scheduleDisplayA').style.display = 'block';
     } else {
       alert('Incorrect password');
     }
