@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>School Schedule - TESTING7A-2</title>
+  <title>School Schedule - TESTING7A-3</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -83,7 +83,7 @@
 
   <div id="scheduleDisplay" style="display:none;">
     <h2>7B Schedule</h2>
-    <p id="scheduleInfo"></p>
+    <p id="scheduleInfoB"></p>
     <div>
       <button onclick="showSchedule('week1')">Week 1</button>
       <button disabled>Week 2 (Coming Soon)</button>
@@ -91,7 +91,7 @@
   </div>
   <div id="scheduleDisplayA" style="display:none;">
     <h2>7A Schedule</h2>
-    <p id="scheduleInfo"></p>
+    <p id="scheduleInfoA"></p>
     <div>
       <button onclick="showSchedule('week1')">Week 1</button>
       <button disabled>Week 2 (Coming Soon)</button>
@@ -113,14 +113,14 @@
     } else if (enteredPassword === group2Password) {
       currentUserGroup = '7A';
       document.getElementById('passwordBox').style.display = 'none';
-      document.getElementById('scheduleDisplayA').style.display = 'block';
+      document.getElementById('scheduleDisplayB').style.display = 'block';
     } else {
       alert('Incorrect password');
     }
   }
 
   function showSchedule(week) {
-    const scheduleInfo = document.getElementById('scheduleInfo');
+    const scheduleInfo = document.getElementById('scheduleInfoB');
     if (currentUserGroup === '7B') {
       const currentDate = new Date();
       const currentDay = (currentDate.getUTCDay() + 4) % 7; // Adjust for GMT+4
